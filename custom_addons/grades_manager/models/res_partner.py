@@ -1,0 +1,6 @@
+from odoo import models, fields
+
+class ResPartne(models.Model):
+    _inherit = 'res.partner'
+
+    is_teacher = fields.Boolean(string='Is a Teacher')

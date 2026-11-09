@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!-- Vista de lista -->
+<record id="view_libro_list" model="ir.ui.view">
+<field name="name">mi_biblioteca.libro.list</field>
+<field name="model">mi_biblioteca.libro</field>
+<field name="arch" type="xml">
+<list string="Lista de Libros">
+<field name="name"/>
+<field name="autor"/>
+<field name="fecha_publicacion"/>
+<field name="paginas"/>
+<field name="disponible"/>
+</list>
+</field>
+</record>
+
+<!-- Vista de formulario -->
+<record id="view_libro_form" model="ir.ui.view">
+<field name="name">mi_biblioteca.libro.form</field>
+<field name="model">mi_biblioteca.libro</field>
+<field name="arch" type="xml">
+<form string="Libro">
+<sheet>
+<group>
+<field name="name"/>
+<field name="autor"/>
+<field name="fecha_publicacion"/>
+<field name="paginas"/>
+<field name="disponible"/>
+</group>
+</sheet>
+</form>
+</field>
+</record>
+
+<!-- Acción -->
+<record id="action_libro" model="ir.actions.act_window">
+<field name="name">Libros</field>
+<field name="res_model">mi_biblioteca.libro</field>
+<field name="view_mode">list,form</field>
+</record>
+
+<!-- Menús -->
+<menuitem id="menu_biblioteca_root" name="Biblioteca"/>
+<menuitem id="menu_libros"
+name="Libros"
+parent="menu_biblioteca_root"
+action="action_libro"/>
+</odoo>

@@ -1,0 +1,13 @@
+<odoo>
+<!-- Nivel 1: Aplicación -->
+<menuitem id="grades_manager_menu" name="Grades Manager" sequence="1"/>
+
+<!-- Nivel 2: Cursos -->
+<menuitem id="grades_courses_menu" name="Cursos" 
+parent="grades_manager_menu" 
+action="grades_course_action" sequence="1" />
+
+<!-- Nivel 2: Teachers (extiende Contactos para el rol del profesor) -->
+<menuitem id="grades_teachers_menu" name="Teachers" 
+parent="grades_manager_menu"  action="grades_teachers_action" sequence="2"/>
+</odoo>
